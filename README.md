@@ -30,6 +30,13 @@ Python VM Activate:
 ```shell
 .\ihaenv\Scripts\activate
 ```
+
+Django DB Setup
+```shell
+python manage.py makemigrations
+python manage.py migrate
+```
+
 Django Server RUN
 ```shell
 python .\manage.py runserver
