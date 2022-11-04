@@ -26,11 +26,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'static/upload')
 ```
 
 # Project RUN (VM):
+Python Virtual Environments Setup<br>
+ihaenv.rar Extract it to the Directory where it is located.<br><br>
 Python VM Activate:
 ```shell
 .\ihaenv\Scripts\activate
 ```
-
 Django DB Setup
 ```shell
 python manage.py makemigrations
