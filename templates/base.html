@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title> {% block title %} {% endblock %} | Web IHA</title>
+
+    {% include 'components/css.html' %}
+
+  </head>
+  <body>
+
+ {% include 'components/header.html' %}
+
+<div class="container-fluid">
+  <div class="row">
+
+    {% include 'components/sideMenu.html' %}
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+       {% block content %}
+
+        {% endblock %}
+    </main>
+  </div>
+</div>
+  {% include 'components/js.html' %}
+    </body>
+</html>

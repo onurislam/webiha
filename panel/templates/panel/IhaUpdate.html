@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %} {{ iha.id }} {% endblock %}
+{% load static %}
+
+{% block content %}
+<h2>IHA Updata | {{ iha.id }}</h2>
+
+         <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="id_title" class="form-label">IHA TITLE</label>
+            <input type="text" class="form-control" name="title" maxlength="100" required id="id_title" value="{{ iha.title }}">
+        </div>
+        <div class="mb-3">
+            <label for="id_model" class="form-label">IHA Model</label>
+            <input type="text" class="form-control" name="model" maxlength="80" required id="id_model" value="{{ iha.model }}">
+        </div>
+        <div class="mb-3">
+            <label for="id_category" class="form-label">IHA Category</label>
+            <input type="text" class="form-control" name="category" maxlength="80" required id="id_category" value="{{ iha.category }}">
+        </div>
+        <div class="mb-3">
+            <label for="id_weight" class="form-label">IHA Weight</label>
+            <input class="form-control" type="number" name="weight" required id="id_weight" value="{{ iha.weight }}">
+        </div>
+
+        <div class="mb-3">
+            <div class="row">
+                <div class="col-3">
+                    <label for="id_images">IHA Images:</label>
+            <input type="file" name="images" id="id_images" value="{{ iha.images }}">
+                </div>
+                <div class="col-4">
+                   <img class="rounded float-start" width="200" height="100" src="/static/upload/{{ iha.images }}">
+                </div>
+            </div>
+
+        </div>
+        <input type="submit" class="btn btn-success" value="Update">
+    </form>
+
+
+{% endblock %}

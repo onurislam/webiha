@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %} IHA ADD {% endblock %}
+
+{% block content %}
+
+<h2>IHA ADD</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="id_title" class="form-label">IHA TITLE</label>
+            <input type="text" class="form-control" name="title" maxlength="100" required id="id_title">
+        </div>
+        <div class="mb-3">
+            <label for="id_model" class="form-label">IHA Model</label>
+            <input type="text" class="form-control" name="model" maxlength="80" required id="id_model">
+        </div>
+        <div class="mb-3">
+            <label for="id_category" class="form-label">IHA Category</label>
+            <input type="text" class="form-control" name="category" maxlength="80" required id="id_category">
+        </div>
+        <div class="mb-3">
+            <label for="id_weight" class="form-label">IHA Weight</label>
+            <input class="form-control" type="number" name="weight" required id="id_weight">
+        </div>
+
+        <div class="mb-3">
+            <label for="id_images">IHA Images:</label>
+            <input type="file" name="images" id="id_images">
+        </div>
+        <input type="submit" class="btn btn-success"  value="ADD">
+    </form>
+
+
+
+{% endblock %}

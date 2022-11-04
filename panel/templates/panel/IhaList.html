@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %} IHA LIST {% endblock %}
+{% load static %}
+{% block content %}
+
+<h2>IHA Lists</h2>
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+        <thead>
+        <tr>
+            <th scope="col" width="200">Image</th>
+            <th scope="col">Title</th>
+            <th scope="col">Model</th>
+            <th scope="col">Category</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Process</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for iha in data %}
+
+        <tr>
+            <td><img class="rounded float-start" width="200" height="100" src="/static/upload/{{ iha.images }}"></td>
+            <td>{{ iha.title }}</td>
+            <td>{{ iha.model }}</td>
+            <td>{{ iha.category }}</td>
+            <td>{{ iha.weight }} </td>
+
+            <td><a href="ihaupdate/{{ iha.id }}" class="btn btn-sm btn-info">Update</a>&nbsp;<a href="ihadelete/{{ iha.id }}" class="btn btn-sm btn-danger">Delete</a></td>
+        </tr>
+
+        {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+{% endblock %}
